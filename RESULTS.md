@@ -7,3 +7,4 @@
 - Step 0.3: exactly 20 iterations and 20 requests; p(95) = 276.27 ms.
 - Step 0.4: all 3 checks passed; the response was 200, included a pizza name, and every ingredient was vegetarian.
 - Step 0.5: the missing-token request returned 401 and passed its check; http_req_failed was 0% because 401 was declared an expected status.
+- Step 0.6, exit code of the normal run and of the run with P95=300: normal run exit code 0 (p(95) = 389.38 ms); P95=300 exit code 99 (measured p(95) = 388.34 ms in that run).
