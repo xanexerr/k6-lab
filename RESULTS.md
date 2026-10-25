@@ -10,3 +10,9 @@
 - Step 0.6, exit code of the normal run and of the run with P95=300: normal run exit code 0 (p(95) = 389.38 ms); P95=300 exit code 99 (measured p(95) = 388.34 ms in that run).
 - Step 0.7, rules that passed, p(95), p(99), exit code after your change: the original p(95) < 1000 ms, p(99) < 1500 ms, failure rate < 1%, and checks > 99% all passed (measured p(95) = 375.76 ms, p(99) = 379.47 ms). Changing p(95) to < 1 ms failed the threshold and returned exit code 99.
 - Step 0.8, what was wrong, and how the checks showed it: the request sent lowercase `pepperoni` and `knife`, while the catalog uses `Pepperoni` and `Knife`; the case-sensitive exclusions were ignored. The initial 5-VU run passed status checks but failed 39 of 150 restriction checks (12 pepperoni results and 27 knife results). After correcting the values, all 225 checks passed. Repeated requests exposed the random unwanted results that a single request could miss.
+
+## Part A results
+
+| Step | Test type | Users | Req/s | p(95) | Max | Failed | Checks |
+| ---- | ------------ | ----- | ----- | ----- | --- | ------ | ------ |
+| A1 | Smoke | 1 | 0.50 | 335.78 ms | 370.25 ms | 0% | 100% (20/20) |
