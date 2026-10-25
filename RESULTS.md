@@ -6,3 +6,4 @@
 - Step 0.2, requests, rate and p(95), and why the rate stays below 5: 80 requests, 3.80 requests/s, p(95) = 281.76 ms. Each iteration includes an HTTP request, its response time, and a 1 second sleep, so five VUs do not each complete five iterations per second.
 - Step 0.3: exactly 20 iterations and 20 requests; p(95) = 276.27 ms.
 - Step 0.4: all 3 checks passed; the response was 200, included a pizza name, and every ingredient was vegetarian.
+- Step 0.5: the missing-token request returned 401 and passed its check; http_req_failed was 0% because 401 was declared an expected status.
